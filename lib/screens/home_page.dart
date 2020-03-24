@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:reporterr/models/news.dart';
 
+import 'news_details.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -53,27 +55,21 @@ class _HomePageState extends State<HomePage> {
                     return Card(
                       elevation: 1.0,
                       child: ListTile(
-                        leading: Image.network(article.urlToImage,
+                        leading: article.urlToImage==null?Image.asset('images/news.jpg',fit: BoxFit.cover,width:75.0,height: 60.0,):Image.network(article.urlToImage,
                             fit: BoxFit.cover,
                             width: 75.0,
                             height: 60.0,
-                            loadingBuilder: (BuildContext context,
-                                Widget child, ImageChunkEvent loadingProgress) {
-                          if (loadingProgress == null) return child;
-                          return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                      loadingProgress.expectedTotalBytes
-                                  : null,
-                            ),
-                          );
-                        }),
+                        ),
                         title: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(article.title,
                           maxLines: 3,),
                         ),
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (BuildContext context)=>NewsDetails(article)
+                          ));
+                        },
                       ),
                     );
                   },

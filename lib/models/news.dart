@@ -1,4 +1,4 @@
-import 'package:reporterr/models/article.dart';
+
 
 class News {
   String status;
