@@ -30,6 +30,7 @@ dependencies:
   easy_web_view: ^1.2.0
   url_launcher: ^5.4.2
   google_fonts: ^0.3.10
+  share: ^0.6.3+6
 
 dev_dependencies:
   flutter_test:

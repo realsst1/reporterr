@@ -4,6 +4,7 @@ import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:reporterr/models/news.dart';
+import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -23,7 +24,7 @@ class _NewsDetailsState extends State<NewsDetails> {
   _launchURL(String url)async{
     var urlToGo=url;
     if(await canLaunch(urlToGo)){
-      await launch(urlToGo,forceWebView: true);
+      await launch(urlToGo,forceWebView: true,);
     }
     else{
       throw 'Could not launch $urlToGo';
@@ -53,13 +54,15 @@ class _NewsDetailsState extends State<NewsDetails> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    widget.articles.author==null?
-                        "NA":widget.articles.author,
-                    style: TextStyle(
-                      fontSize: 16.0
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      widget.articles.author==null?
+                          "NA":widget.articles.author,
+                      style: TextStyle(
+                        fontSize: 16.0
+                      ),
                     ),
                   ),
                 ),
@@ -98,18 +101,30 @@ class _NewsDetailsState extends State<NewsDetails> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Text(
-                  widget.articles.url==null?"NA":"Click to read the full article",
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    color: Colors.blue
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    child: Text(
+                      widget.articles.url==null?"NA":"Click to read the full article",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.blue
+                      ),
+                    ),
+                    onTap: ()=>_launchURL(widget.articles.url)
                   ),
                 ),
-                onTap: ()=>_launchURL(widget.articles.url)
-              ),
+                IconButton(
+                  icon: Icon(Icons.share),
+                  iconSize: 32.0,
+                  onPressed: (){
+                      Share.share(widget.articles.url);
+                  },
+                )
+              ],
             )
           ],
         ),
