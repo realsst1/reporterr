@@ -56,16 +56,18 @@ class _HomePageState extends State<HomePage> {
                     return Card(
                       elevation: 1.0,
                       child: ListTile(
-                        leading: article.urlToImage==null?Image.asset('images/news.jpg',fit: BoxFit.cover,width:75.0,height: 60.0,):Image.network(article.urlToImage,
+                        leading: article.urlToImage==null?Image.asset('assets/images/news.jpg',fit: BoxFit.cover,width:75.0,height: 70.0,):Image.network(article.urlToImage,
                             fit: BoxFit.cover,
                             width: 75.0,
-                            height: 60.0,
+                            height: 95.0,
                         ),
                         title: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Text(article.title,
                           maxLines: 3,
-                            style: GoogleFonts.lato(),
+                            style: GoogleFonts.lato(
+                              fontSize: 18.0
+                            ),
                           ),
                         ),
                         onTap: (){

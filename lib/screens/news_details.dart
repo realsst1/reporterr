@@ -43,7 +43,7 @@ class _NewsDetailsState extends State<NewsDetails> {
         child: Column(
           children: <Widget>[
             widget.articles.urlToImage==null?
-                Image.asset('news.jpg'):
+                Image.asset('assets/images/news.jpg'):
                 Image.network(
                   widget.articles.urlToImage,
                   fit: BoxFit.cover,
