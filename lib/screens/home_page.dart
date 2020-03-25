@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:reporterr/models/news.dart';
 
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               "Top Headlines",
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+              style: GoogleFonts.roboto(fontSize: 24.0,fontWeight: FontWeight.bold),
             ),
           ),
           FutureBuilder(
@@ -63,7 +64,9 @@ class _HomePageState extends State<HomePage> {
                         title: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(article.title,
-                          maxLines: 3,),
+                          maxLines: 3,
+                            style: GoogleFonts.lato(),
+                          ),
                         ),
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(

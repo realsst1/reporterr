@@ -102,7 +102,7 @@ class _NewsDetailsState extends State<NewsDetails> {
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
                 child: Text(
-                  widget.articles.url==null?"NA":"URL to the full article: \n"+widget.articles.url,
+                  widget.articles.url==null?"NA":"Click to read the full article",
                   style: TextStyle(
                     fontSize: 18.0,
                     color: Colors.blue
