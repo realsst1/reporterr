@@ -19,6 +19,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       children: <Widget>[
         InkWell(
           child: Card(
+            color: Color.fromRGBO(240, 157, 125,100.0),
             elevation: 5.0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0)
@@ -47,6 +48,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ),
         InkWell(
           child: Card(
+            color: Color.fromRGBO(116, 171, 252,100.0),
             elevation: 5.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)
@@ -82,6 +84,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ),
         InkWell(
           child: Card(
+            color: Color.fromRGBO(222, 232, 255,100.0),
             elevation: 5.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)
@@ -111,6 +114,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ),
         InkWell(
           child: Card(
+            color: Color.fromRGBO(255, 222, 222,100.0) ,
             elevation: 5.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)
@@ -140,6 +144,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ),
         InkWell(
           child: Card(
+            color: Color.fromRGBO(156, 138, 255,100.0),
             elevation: 5.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)
@@ -169,6 +174,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ),
         InkWell(
           child: Card(
+            color: Color.fromRGBO(235, 255, 138,100.0),
             elevation: 5.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)
@@ -198,6 +204,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ),
         InkWell(
           child: Card(
+            color: Color.fromRGBO(138, 255, 181,100.0),
             elevation: 5.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)
